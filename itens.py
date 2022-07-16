@@ -1,268 +1,194 @@
 import random
-import numpy as np
 import eel
 
 eel.init("web")
 
 # Início da função de consumíveis
 def dropConsu(rar):
-    com = np.array(['Pergaminho de Identificação', 'Bandagem Simples', 'Pomada Mágica', 'Combustível', 'Pergaminho de Magia Comum', 'Incenso de Foco Simples'])
-    uncom = np.array(['Bandagem Mediana', 'Pomada Mágica Mediana', 'Mapa Incomum', 'Saco de Moedas', 'Pergaminho de Treinamento', 'Pergaminho de Magia Incomum', 'Incenso de Foco Mediano'])
-    raro = np.array(['Bandagem Avançada', 'Pomada Mágica Avançada', 'Kit de Costura', 'Mapa Raro', 'Suprimentos', 'Saco Grande de Moedas', 'Resíduo do Infinito', 'Pergaminho de Mágia Rara', 'Incenso de Foco Avançado', 'Pergaminho de Teleporte'])
-    epic = np.array(['Bandagem Superior', 'Pomada Mágica Superior', 'Mapa Épico', 'Saco Enorme de Moedas', 'Fragmento do Infinito', 'Pergaminho de Magia Épica', 'Incenso de Foco Superior', 'Pergaminho de Ressurreição'])
-    leg = np.array(['Bandagem Excelente', 'Pomada Mágica Excelente', 'Mapa Lendário', 'Caixa de Suprimentos', 'Mapa do Tesouro', 'Pedaço do Infinito', 'Pergaminho de Magia Lendária', 'Pergaminho de Teleporte em Massa', 'Incenso de Foco Excelente', 'Pergaminho de Ressurreição em Massa'])
+    com = ['Pergaminho de Identificação', 'Bandagem Simples', 'Pomada Mágica', 'Combustível', 'Pergaminho de Magia Comum', 'Incenso de Foco Simples']
+    uncom = ['Bandagem Mediana', 'Pomada Mágica Mediana', 'Mapa Incomum', 'Saco de Moedas', 'Pergaminho de Treinamento', 'Pergaminho de Magia Incomum', 'Incenso de Foco Mediano']
+    raro = ['Bandagem Avançada', 'Pomada Mágica Avançada', 'Kit de Costura', 'Mapa Raro', 'Suprimentos', 'Saco Grande de Moedas', 'Resíduo do Infinito', 'Pergaminho de Mágia Rara', 'Incenso de Foco Avançado', 'Pergaminho de Teleporte']
+    epic = ['Bandagem Superior', 'Pomada Mágica Superior', 'Mapa Épico', 'Saco Enorme de Moedas', 'Fragmento do Infinito', 'Pergaminho de Magia Épica', 'Incenso de Foco Superior', 'Pergaminho de Ressurreição']
+    leg = ['Bandagem Excelente', 'Pomada Mágica Excelente', 'Mapa Lendário', 'Caixa de Suprimentos', 'Mapa do Tesouro', 'Pedaço do Infinito', 'Pergaminho de Magia Lendária', 'Pergaminho de Teleporte em Massa', 'Incenso de Foco Excelente', 'Pergaminho de Ressurreição em Massa']
     
     if rar == 1 :
-        result = random.randint(1, 6)
-        eel.printDrop(com[result-1])
+        eel.printDrop(random.choice(com))
     elif rar == 2 :
-        result = random.randint(1, 7)
-        eel.printDrop(uncom[result-1])
+        eel.printDrop(random.choice(uncom))
     elif rar == 3 :
-        result = random.randint(1, 10)
-        eel.printDrop(raro[result-1])
+        eel.printDrop(random.choice(raro))
     elif rar == 4 :
-        result = random.randint(1, 8)
-        eel.printDrop(epic[result-1])
+        eel.printDrop(random.choice(epic))
     else :
-        result = random.randint(1, 10)
-        eel.printDrop(leg[result-1])
+        eel.printDrop(random.choice(leg))
     return 0
 # Fim da função de consumíveis
 
 # Início da função de poções
 def dropPot(rar):
-    com = np.array(['Sem pot comum', 'Sem pot comum2'])
-    uncom = np.array(['Sem pot incomum', 'Sem pot incomum2'])
-    raro = np.array(['Sem pot rara', 'Sem pot rara2'])
-    epic = np.array(['Sem pot epica', 'Sem pot epica2'])
-    leg = np.array(['Sem pot leg', 'Sem pot leg2'])
+    com = ['Sem pot comum', 'Sem pot comum2']
+    uncom = ['Sem pot incomum', 'Sem pot incomum2']
+    raro = ['Sem pot rara', 'Sem pot rara2']
+    epic = ['Sem pot epica', 'Sem pot epica2']
+    leg = ['Sem pot leg', 'Sem pot leg2']
     
     if rar == 1 :
-        result = random.randint(1, 2)
-        eel.printDrop(com[result-1])
+        eel.printDrop(random.choice(com))
     elif rar == 2 :
-        result = random.randint(1, 2)
-        eel.printDrop(uncom[result-1])
+        eel.printDrop(random.choice(uncom))
     elif rar == 3 :
-        result = random.randint(1, 2)
-        eel.printDrop(raro[result-1])
+        eel.printDrop(random.choice(raro))
     elif rar == 4 :
-        result = random.randint(1, 2)
-        eel.printDrop(epic[result-1])
+        eel.printDrop(random.choice(epic))
     else :
-        result = random.randint(1, 2)
-        eel.printDrop(leg[result-1])
+        eel.printDrop(random.choice(leg))
     return 0
 # Fim da função de poções
 
 # Início da função de engenhocas
 def dropEng(rar):
-    com = np.array(['Sem eng comum', 'Sem eng comum2'])
-    uncom = np.array(['Sem eng incomum', 'Sem eng incomum2'])
-    raro = np.array(['Sem eng rara', 'Sem eng rara2'])
-    epic = np.array(['Prótese Braço-de-Lâmina', 'Prótese Caminhante-da-Tempestade'])
-    leg = np.array(['Sem eng leg', 'Sem eng leg2'])
+    com = ['Sem eng comum', 'Sem eng comum2']
+    uncom = ['Sem eng incomum', 'Sem eng incomum2']
+    raro = ['Sem eng rara', 'Sem eng rara2']
+    epic = ['Prótese Braço-de-Lâmina', 'Prótese Caminhante-da-Tempestade']
+    leg = ['Sem eng leg', 'Sem eng leg2']
     
     if rar == 1 :
-        result = random.randint(1, 2)
-        eel.printDrop(com[result-1])
+        eel.printDrop(random.choice(com))
     elif rar == 2 :
-        result = random.randint(1, 2)
-        eel.printDrop(uncom[result-1])
+        eel.printDrop(random.choice(uncom))
     elif rar == 3 :
-        result = random.randint(1, 2)
-        eel.printDrop(raro[result-1])
+        eel.printDrop(random.choice(raro))
     elif rar == 4 :
-        result = random.randint(1, 2)
-        eel.printDrop(epic[result-1])
+        eel.printDrop(random.choice(epic))
     else :
-        result = random.randint(1, 2)
-        eel.printDrop(leg[result-1])
+        eel.printDrop(random.choice(leg))
     return 0
 # Fim da função de engenhocas
 
 # Início da função de armaduras
 def dropArmor(rar):
-    tipo = np.array(['Escudo:', 'Armadura Leve:', 'Armadura Média:', 'Armadura Pesada:'])
-    uncom = np.array(['+1', '+2', 'Espaço de Runa(+1)'])
-    raro = np.array(['+3', 'Espaço de Runa(+2)'])
-    epic = np.array(['+4', 'Espaço de Runa(+3)'])
-    leg = np.array(['+5', 'Espaço de Runa(+4)'])
-    
-    rTipo = random.randint(1, 4)
+    tipo = ['Escudo:', 'Armadura Leve:', 'Armadura Média:', 'Armadura Pesada:']
+    uncom = ['+1', '+2', 'Espaço de Runa(+1)']
+    raro = ['+3', 'Espaço de Runa(+2)']
+    epic = ['+4', 'Espaço de Runa(+3)']
+    leg = ['+5', 'Espaço de Runa(+4)']
     
     if rar == 1 :
-        eel.printDrop(tipo[rTipo-1])
+        eel.printDrop(random.choice(tipo))
     elif rar == 2 :
-        result = random.randint(1, 3)
-        eel.printDrop(tipo[rTipo-1] + ' ' + uncom[result-1])
+        eel.printDrop(random.choice(tipo) + ' ' + random.choice(uncom))
     elif rar == 3 :
         cbnt = random.randint(1, 2)
         if cbnt == 1 :
-            result = random.randint(1, 2)
-            eel.printDrop(tipo[rTipo-1] + ' ' + raro[result-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(raro))
         else :
-            result = random.randint(1, 3)
-            result2 = random.randint(1, 3)
-            eel.printDrop(tipo[rTipo-1] + ' ' + uncom[result-1] + ', ' + uncom[result2-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(uncom) + ', ' + random.choice(uncom))
     elif rar == 4 :
         cbnt = random.randint(1, 3)
         if cbnt == 1 :
-            result = random.randint(1, 2)
-            eel.printDrop(tipo[rTipo-1] + ' ' + epic[result-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(epic))
         elif cbnt == 2 :
-            result = random.randint(1, 2)
-            result2 = random.randint(1, 3)
-            eel.printDrop(tipo[rTipo-1] + ' ' + raro[result-1] + ', ' + uncom[result2-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(raro) + ', ' + random.choice(uncom))
         else :
-            result = random.randint(1, 3)
-            result2 = random.randint(1, 3)
-            result3 = random.randint(1, 3)
-            eel.printDrop(tipo[rTipo-1] + ' ' + uncom[result-1] + ', ' + uncom[result2-1] + ', ' + uncom[result3-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(uncom) + ', ' + random.choice(uncom) + ', ' + random.choice(uncom))
     else :
         cbnt = random.randint(1, 5)
         if cbnt == 1 :
-            result = random.randint(1, 2)
-            eel.printDrop(tipo[rTipo-1] + ' ' + leg[result-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(leg))
         elif cbnt == 2 :
-            result = random.randint(1, 2)
-            result2 = random.randint(1, 3)
-            eel.printDrop(tipo[rTipo-1] + ' ' + epic[result-1] + ', ' + uncom[result2-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(epic) + ', ' + random.choice(uncom))
         elif cbnt == 3 :
-            result = random.randint(1, 2)
-            result2 = random.randint(1, 2)
-            eel.printDrop(tipo[rTipo-1] + ' ' + raro[result-1] + ', ' + raro[result2-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(raro) + ', ' + random.choice(raro))
         elif cbnt == 4 :
-            result = random.randint(1, 2)
-            result2 = random.randint(1, 3)
-            result3 = random.randint(1, 3)
-            eel.printDrop(tipo[rTipo-1] + ' ' + raro[result-1] + ', ' + uncom[result2-1] + ', ' + uncom[result3-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(raro) + ', ' + random.choice(uncom) + ', ' + random.choice(uncom))
         else :
-            result = random.randint(1, 3)
-            result2 = random.randint(1, 3)
-            result3 = random.randint(1, 3)
-            result4 = random.randint(1, 3)
-            eel.printDrop(tipo[rTipo-1] + ' ' + uncom[result-1] + ', ' + uncom[result2-1] + ', ' + uncom[result3-1]  + ', ' + uncom[result4-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(uncom) + ', ' + random.choice(uncom) + ', ' + random.choice(uncom)  + ', ' + random.choice(uncom))
     
     return 0
 # Fim da função de armaduras
 
 # Início da função de armas
 def dropWeap(rar):
-    tipo = np.array(['Adaga:', 'Arco:', 'Besta:', 'Escopeta:', 'Espada Reta:', 'Katana:', 'Lança:', 'Machado:', 'Maça:', 'Pistola:', 'Rifle:', 'Sabre:'])
-    uncom = np.array(['+1', '+2', 'Flamejante', 'Congelante', 'Elétrico', 'Venenoso', 'Bento', 'Maldito', 'Arcano', 'Sangrento', 'Encantado', 'Espaço de Runa(+1)'])
-    raro = np.array(['+3', 'Infundido', 'Sagrado', 'Profano', 'Vampírico', 'Queima-Mana', 'Prateado', 'Ferro Gelado', 'Bizantino', 'Euclidiano', 'Espaço de Runa(+2)'])
-    epic = np.array(['+4', 'Crítico', 'Captura-Alma', 'Retornável', 'Ecoante', 'Praguejado', 'Espaço de Runa(+3)'])
-    leg = np.array(['+5', 'Vorpal', 'Temporal', 'Banidor', 'Dimensional', 'Fúria dos Ventos', 'Espaço de Runa(+4)'])
-    
-    rTipo = random.randint(1, 12)
+    tipo = ['Adaga:', 'Arco:', 'Besta:', 'Escopeta:', 'Espada Reta:', 'Katana:', 'Lança:', 'Machado:', 'Maça:', 'Pistola:', 'Rifle:', 'Sabre:']
+    uncom = ['+1', '+2', 'Flamejante', 'Congelante', 'Elétrico', 'Venenoso', 'Bento', 'Maldito', 'Arcano', 'Sangrento', 'Encantado', 'Espaço de Runa(+1)']
+    raro = ['+3', 'Infundido', 'Sagrado', 'Profano', 'Vampírico', 'Queima-Mana', 'Prateado', 'Ferro Gelado', 'Bizantino', 'Euclidiano', 'Espaço de Runa(+2)']
+    epic = ['+4', 'Crítico', 'Captura-Alma', 'Retornável', 'Ecoante', 'Praguejado', 'Espaço de Runa(+3)']
+    leg = ['+5', 'Vorpal', 'Temporal', 'Banidor', 'Dimensional', 'Fúria dos Ventos', 'Espaço de Runa(+4)']
     
     if rar == 1 :
-        eel.printDrop(tipo[rTipo-1])
+        eel.printDrop(random.choice(tipo))
     elif rar == 2 :
-        result = random.randint(1, 12)
-        eel.printDrop(tipo[rTipo-1] + ' ' + uncom[result-1])
+        eel.printDrop(random.choice(tipo) + ' ' + random.choice(uncom))
     elif rar == 3 :
         cbnt = random.randint(1, 2)
         if cbnt == 1 :
-            result = random.randint(1, 11)
-            eel.printDrop(tipo[rTipo-1] + ' ' + raro[result-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(raro))
         else :
-            result = random.randint(1, 7)
-            result2 = random.randint(1, 7)
-            eel.printDrop(tipo[rTipo-1] + ' ' + uncom[result-1] + ', ' + uncom[result2-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(uncom) + ', ' + random.choice(uncom))
     elif rar == 4 :
         cbnt = random.randint(1, 3)
         if cbnt == 1 :
-            result = random.randint(1, 7)
-            eel.printDrop(tipo[rTipo-1] + ' ' + epic[result-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(epic))
         elif cbnt == 2 :
-            result = random.randint(1, 11)
-            result2 = random.randint(1, 12)
-            eel.printDrop(tipo[rTipo-1] + ' ' + raro[result-1] + ', ' + uncom[result2-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(raro) + ', ' + random.choice(uncom))
         else :
-            result = random.randint(1, 12)
-            result2 = random.randint(1, 12)
-            result3 = random.randint(1, 12)
-            eel.printDrop(tipo[rTipo-1] + ' ' + uncom[result-1] + ', ' + uncom[result2-1] + ', ' + uncom[result3-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(uncom) + ', ' + random.choice(uncom) + ', ' + random.choice(uncom))
     else :
         cbnt = random.randint(1, 5)
         if cbnt == 1 :
-            result = random.randint(1, 7)
-            eel.printDrop(tipo[rTipo-1] + ' ' + leg[result-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(leg))
         elif cbnt == 2 :
-            result = random.randint(1, 7)
-            result2 = random.randint(1, 12)
-            eel.printDrop(tipo[rTipo-1] + ' ' + epic[result-1] + ', ' + uncom[result2-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(epic) + ', ' + random.choice(uncom))
         elif cbnt == 3 :
-            result = random.randint(1, 11)
-            result2 = random.randint(1, 11)
-            eel.printDrop(tipo[rTipo-1] + ' ' + raro[result-1] + ', ' + raro[result2-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(raro) + ', ' + random.choice(raro))
         elif cbnt == 4 :
-            result = random.randint(1, 11)
-            result2 = random.randint(1, 12)
-            result3 = random.randint(1, 12)
-            eel.printDrop(tipo[rTipo-1] + ' ' + raro[result-1] + ', ' + uncom[result2-1] + ', ' + uncom[result3-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(raro) + ', ' + random.choice(uncom) + ', ' + random.choice(uncom))
         else :
-            result = random.randint(1, 11)
-            result2 = random.randint(1, 12)
-            result3 = random.randint(1, 12)
-            result4 = random.randint(1, 12)
-            eel.printDrop(tipo[rTipo-1] + ' ' + uncom[result-1] + ', ' + uncom[result2-1] + ', ' + uncom[result3-1]  + ', ' + uncom[result4-1])
+            eel.printDrop(random.choice(tipo) + ' ' + random.choice(uncom) + ', ' + random.choice(uncom) + ', ' + random.choice(uncom)  + ', ' + random.choice(uncom))
     
     return 0
 # Fim da função de armas
 
 # Início da função de magias
 def dropMag(rar):
-    com = np.array(['Labareda', 'Míssil Mágico', 'Estaca de Gelo'])
-    uncom = np.array(['Contra-mágica', 'sem mag incom2'])
-    raro = np.array(['sem mag rara', 'sem mag rara2'])
-    epic = np.array(['sem mag epica', 'sem mag epica2'])
-    leg = np.array(['sem mag leg', 'sem mag leg2'])
+    com = ['Labareda', 'Míssil Mágico', 'Estaca de Gelo']
+    uncom = ['Contra-mágica', 'sem mag incom2']
+    raro = ['sem mag rara', 'sem mag rara2']
+    epic = ['sem mag epica', 'sem mag epica2']
+    leg = ['sem mag leg', 'sem mag leg2']
     
     if rar == 1 :
-        result = random.randint(1, 3)
-        eel.printDrop(com[result-1])
+        eel.printDrop(random.choice(com))
     elif rar == 2 :
-        result = random.randint(1, 2)
-        eel.printDrop(uncom[result-1])
+        eel.printDrop(random.choice(uncom))
     elif rar == 3 :
-        result = random.randint(1, 2)
-        eel.printDrop(raro[result-1])
+        eel.printDrop(random.choice(raro))
     elif rar == 4 :
-        result = random.randint(1, 2)
-        eel.printDrop(epic[result-1])
+        eel.printDrop(random.choice(epic))
     else :
-        result = random.randint(1, 2)
-        eel.printDrop(leg[result-1])
+        eel.printDrop(random.choice(leg))
     return 0
 # Fim da função de magias
 
 # Início da função de runas
 def dropRuna(rar):
-    com = np.array(['Runa de um Plebeu Comum', 'Runa de Armas', 'Runa de Feitiços', 'Runa do Foco', 'Runa da Vida', 'Runa da Velocidade', 'Runa da Chance', 'Runa do Crítico', 'Runa de Proteção Física', 'Runa de Proteção Mágica', 'Runa da Alquimia', 'Runa de Carga'])
-    uncom = np.array(['Runa de um Estudioso Esforçado', 'Runa de um Soldado Sem Nome'])
-    raro = np.array(['Runa de um Professor Erudito', 'Runa de um Cavaleiro Orgulhoso', 'Fuga Ardilosa'])
-    epic = np.array(['Runa de um Bravo Guerreiro', 'Sem runa epica2'])
-    leg = np.array(['Runa de um Grande Herói', 'Sem runa leg2'])
+    com = ['Runa de um Plebeu Comum', 'Runa de Armas', 'Runa de Feitiços', 'Runa do Foco', 'Runa da Vida', 'Runa da Velocidade', 'Runa da Chance', 'Runa do Crítico', 'Runa de Proteção Física', 'Runa de Proteção Mágica', 'Runa da Alquimia', 'Runa de Carga']
+    uncom = ['Runa de um Estudioso Esforçado', 'Runa de um Soldado Sem Nome']
+    raro = ['Runa de um Professor Erudito', 'Runa de um Cavaleiro Orgulhoso', 'Fuga Ardilosa']
+    epic = ['Runa de um Bravo Guerreiro', 'Sem runa epica2']
+    leg = ['Runa de um Grande Herói', 'Sem runa leg2']
     
     if rar == 1 :
-        result = random.randint(1, 12)
-        eel.printDrop(com[result-1])
+        eel.printDrop(random.choice(com))
     elif rar == 2 :
-        result = random.randint(1, 2)
-        eel.printDrop(uncom[result-1])
+        eel.printDrop(random.choice(uncom))
     elif rar == 3 :
-        result = random.randint(1, 3)
-        eel.printDrop(raro[result-1])
+        eel.printDrop(random.choice(raro))
     elif rar == 4 :
-        result = random.randint(1, 2)
-        eel.printDrop(epic[result-1])
+        eel.printDrop(random.choice(epic))
     else :
-        result = random.randint(1, 2)
-        eel.printDrop(leg[ result-1])
+        eel.printDrop(random.choice(leg))
     return 0
 # Fim da função de runas
 
