@@ -45,27 +45,6 @@ def dropPot(rar):
     return 0
 # Fim da função de poções
 
-# Início da função de engenhocas
-def dropEng(rar):
-    com = ['Sem eng comum', 'Sem eng comum2']
-    uncom = ['Sem eng incomum', 'Sem eng incomum2']
-    raro = ['Sem eng rara', 'Sem eng rara2']
-    epic = ['Prótese Braço-de-Lâmina', 'Prótese Caminhante-da-Tempestade']
-    leg = ['Sem eng leg', 'Sem eng leg2']
-    
-    if rar == 1 :
-        eel.printDrop(random.choice(com))
-    elif rar == 2 :
-        eel.printDrop(random.choice(uncom))
-    elif rar == 3 :
-        eel.printDrop(random.choice(raro))
-    elif rar == 4 :
-        eel.printDrop(random.choice(epic))
-    else :
-        eel.printDrop(random.choice(leg))
-    return 0
-# Fim da função de engenhocas
-
 # Início da função de armaduras
 def dropArmor(rar):
     tipo = ['Escudo:', 'Armadura Leve:', 'Armadura Média:', 'Armadura Pesada:']
@@ -196,49 +175,35 @@ def dropRuna(rar):
 def dropTipo(mob, rar) :
     if mob == 1 :
     #Drop de criaturas normais
-        result = random.randint(1, 20)
-        if (result >= 1) and (result <= 4) :         # Consumíveis
+        result = random.randint(1, 100)
+        if (result >= 1) and (result <= 27) :              # Consumíveis
             dropConsu(rar)
-        elif (result >= 5) and (result <= 8) :       # Poções
+        elif (result >= 28) and (result <= 51) :           # Poções
             dropPot(rar)
-        elif (result >= 9) and (result <= 12) :      # Engenhocas
-            dropEng(rar)
-        elif (result >= 13) and (result <= 15) :     # Armaduras
+        elif (result >= 52) and (result <= 69) :           # Armaduras
             dropArmor(rar)
-        elif (result == 16) or (result == 17) :      # Armas
+        elif (result >= 70) and (result <= 82) :           # Armas
             dropWeap(rar)
-        elif (result == 18) or (result == 19) :      # Magias
+        elif (result >= 83) and (result <= 95) :           # Magias
             dropMag(rar)
-        else :                                       # Runas
+        else :                                             # Runas
             dropRuna(rar)
             
-    elif mob == 2 :
-    #Drop de boss
-        result = random.randint(1, 20)
-        if (result >= 1) and (result <= 5) :     # Armaduras
+    else :
+    #Drop de boss ou mapa
+        result = random.randint(1, 100)
+        if (result >= 1) and (result <= 35) :              # Armaduras
             if (rar >= 1) and (rar <= 5) : dropArmor(rar)
             else : eel.printDrop('Armadura Única')
-        elif (result >= 6) and (result <= 10) :      # Armas
+        elif (result >= 36) and (result <= 60) :           # Armas
             if (rar >= 1) and (rar <= 5) : dropWeap(rar)
             else : eel.printDrop('Arma Única')
-        elif (result >= 11) and (result <= 15) :      # Magias
+        elif (result >= 61) and (result <= 85) :           # Magias
             if (rar >= 1) and (rar <= 5) : dropMag(rar)
             else : eel.printDrop('Magia Única')
-        else :                                       # Runas
+        else :                                             # Runas
             if (rar >= 1) and (rar <= 5) : dropRuna(rar)
             else : eel.printDrop('Runa Única')
-    
-    else :
-    #Drop de mapa
-        result = random.randint(1, 20)
-        if (result >= 1) and (result <= 6) :     # Armaduras
-            dropArmor(rar)
-        elif (result >= 7) and (result <= 11) :      # Armas
-            dropWeap(rar)
-        elif (result >= 12) and (result <= 16) :      # Magias
-            dropMag(rar)
-        else :                                       # Runas
-            dropRuna(rar)
             
     return 0
 # Fim da função de tipo
@@ -249,27 +214,27 @@ def dropRar(mob, qtd) :
         if mob == 1 :
         #Drop de criaturas normais
             result = random.randint(1, 20)
-            if (result >= 1) and (result <= 7) :      # Comum
+            if (result >= 1) and (result <= 7) :           # Comum
                 dropTipo(1, 1)
-            elif (result >= 8) and (result <= 12) :   # Incomum
+            elif (result >= 8) and (result <= 12) :        # Incomum
                 dropTipo(1, 2)
-            elif (result >= 13) and (result <= 16) :  # Raro
+            elif (result >= 13) and (result <= 16) :       # Raro
                 dropTipo(1, 3)
-            elif (result >= 17) and (result <= 19) :  # Épico
+            elif (result >= 17) and (result <= 19) :       # Épico
                 dropTipo(1, 4)
-            else :                                    # Lendário
+            else :                                         # Lendário
                 dropTipo(1, 5)
             
         else :
         # Drop de boss
             result = random.randint(1, 20)
-            if (result >= 1) and (result <= 12) :     # Raro
+            if (result >= 1) and (result <= 12) :          # Raro
                 dropTipo(2, 3)
-            elif (result >= 13) and (result <= 17) :  # Épico
+            elif (result >= 13) and (result <= 17) :       # Épico
                 dropTipo(2, 4)
-            elif (result >= 18) and (result <= 19) :  # Lendário
+            elif (result >= 18) and (result <= 19) :       # Lendário
                 dropTipo(2, 5)
-            else :                                    # Único
+            else :                                         # Único
                 dropTipo(2, 6)
                 
         qtd-= 1
@@ -279,13 +244,13 @@ def dropRar(mob, qtd) :
 def dropQtd(mob) :
     if mob == 1 :
         result = random.randint(1, 20)
-        if (result >= 1) and (result <= 5) :          # 0
+        if (result >= 1) and (result <= 5) :               # 0
             eel.printDrop('Nenhum drop')
-        elif (result >= 6) and (result <= 14) :       # 1
+        elif (result >= 6) and (result <= 14) :            # 1
             dropRar(mob, 1)
-        elif (result >= 15) and (result <= 18) :      # 2
+        elif (result >= 15) and (result <= 18) :           # 2
             dropRar(mob, 2)
-        else :                                        # 3
+        else :                                             # 3
             dropRar(mob, 3)
             
     else :
@@ -306,7 +271,7 @@ def dropMenu(btn, rar) :
     elif btn == 2 :
         dropQtd(2)
     elif btn == 3 :
-        dropTipo(3, rar)
+        dropTipo(2, rar)
     elif btn == 4 :
         dropMag(rar)
 # Fim do menu
